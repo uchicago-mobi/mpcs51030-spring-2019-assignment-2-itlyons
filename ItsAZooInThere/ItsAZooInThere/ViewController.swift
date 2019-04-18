@@ -114,15 +114,14 @@ class Animal: CustomStringConvertible {
 }
 
 extension ViewController: UIScrollViewDelegate {
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        // print("(\(scrollView.contentOffset.x)")
         /* I can tell when the user has scrolled through contentOffset, but I
          can't figure out how to access the UILabel to reset it.
          */
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         // print("Next animal reached")
-        // print(scrollView.subviews)
         
     }
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
