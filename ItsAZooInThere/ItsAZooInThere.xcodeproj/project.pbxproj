@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		F771E49822690F7400B9DE46 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F771E49722690F7400B9DE46 /* Images.xcassets */; };
+		F771E49D2269118700B9DE46 /* GuineaPig.wav in Resources */ = {isa = PBXBuildFile; fileRef = F771E49A2269118700B9DE46 /* GuineaPig.wav */; };
+		F771E49E2269118700B9DE46 /* Lemur.wav in Resources */ = {isa = PBXBuildFile; fileRef = F771E49B2269118700B9DE46 /* Lemur.wav */; };
+		F771E49F2269118700B9DE46 /* Chipmunk.wav in Resources */ = {isa = PBXBuildFile; fileRef = F771E49C2269118700B9DE46 /* Chipmunk.wav */; };
 		F799021B226656A6001969DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F799021A226656A6001969DD /* AppDelegate.swift */; };
 		F799021D226656A6001969DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F799021C226656A6001969DD /* ViewController.swift */; };
 		F7990220226656A6001969DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F799021E226656A6001969DD /* Main.storyboard */; };
@@ -27,6 +30,9 @@
 
 /* Begin PBXFileReference section */
 		F771E49722690F7400B9DE46 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F771E49A2269118700B9DE46 /* GuineaPig.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = GuineaPig.wav; sourceTree = "<group>"; };
+		F771E49B2269118700B9DE46 /* Lemur.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Lemur.wav; sourceTree = "<group>"; };
+		F771E49C2269118700B9DE46 /* Chipmunk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Chipmunk.wav; sourceTree = "<group>"; };
 		F7990217226656A6001969DD /* ItsAZooInThere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItsAZooInThere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F799021A226656A6001969DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F799021C226656A6001969DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +62,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F771E4992269118700B9DE46 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				F771E49A2269118700B9DE46 /* GuineaPig.wav */,
+				F771E49B2269118700B9DE46 /* Lemur.wav */,
+				F771E49C2269118700B9DE46 /* Chipmunk.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		F799020E226656A5001969DD = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +99,7 @@
 				F7990223226656A7001969DD /* LaunchScreen.storyboard */,
 				F7990226226656A7001969DD /* Info.plist */,
 				F771E49722690F7400B9DE46 /* Images.xcassets */,
+				F771E4992269118700B9DE46 /* Sounds */,
 			);
 			path = ItsAZooInThere;
 			sourceTree = "<group>";
@@ -179,7 +196,10 @@
 			files = (
 				F771E49822690F7400B9DE46 /* Images.xcassets in Resources */,
 				F7990225226656A7001969DD /* LaunchScreen.storyboard in Resources */,
+				F771E49E2269118700B9DE46 /* Lemur.wav in Resources */,
+				F771E49D2269118700B9DE46 /* GuineaPig.wav in Resources */,
 				F7990220226656A6001969DD /* Main.storyboard in Resources */,
+				F771E49F2269118700B9DE46 /* Chipmunk.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

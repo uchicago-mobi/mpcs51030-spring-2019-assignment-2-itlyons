@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     var animalSoundEffect: AVAudioPlayer?
 
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var animalLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +25,6 @@ class ViewController: UIViewController {
         
         self.animals.append(contentsOf:  [animal1, animal2, animal3])
         self.animals.shuffle()
-        print(self.animals)
         
         scrollView.delegate = self
         scrollView.contentSize = CGSize(width: 1125, height: 500)
@@ -36,36 +37,38 @@ class ViewController: UIViewController {
             button.setTitle(animal.name, for: .normal)
             button.tag = i + 1
             button.isUserInteractionEnabled = true
-            button.tintColor = .white
-            button.backgroundColor = .black
+            button.tintColor = .blue
+            button.backgroundColor = .white
             
             button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-            
             scrollView.addSubview(_: button)
-            print(button)
             
             let view = UIImageView(image: animal.image)
             view.frame = CGRect(x: buttonX, y: 0, width: 375, height: 300)
             view.isUserInteractionEnabled = true
             scrollView.addSubview(_: view)
             
+            
+            // I realize that it doesn't make sense to set the label in the for loop.
+            // It would just set the label to the last animal.
+            //scrollView.addSubview(_ : animalLabel)
+            //animalLabel.text = animal.species
             buttonX += 375
         }
     }
     
     // Create a method to receive button taps.
     @IBAction func buttonTapped(_ sender: UIButton) {
-        
-        print("The button was tapped")
         let animalIndex = sender.tag
         let thisAnimal = self.animals[animalIndex-1]
+
         let alertController = UIAlertController(
-            title: "I'm Brian Fellow.",
-            message: "Hello! I'm \(thisAnimal.name)",
+            title: "Well Hello There.",
+            message: "My name is \(thisAnimal.name).\nI am \(thisAnimal.age) years old.\nI'm what they call a \(thisAnimal.species)!",
             preferredStyle: .alert
         )
         alertController.addAction(UIAlertAction(
-            title: "addAction worked",
+            title: "Hi \(thisAnimal.name)",
             style: .default
         ))
         self.present(alertController, animated: true, completion: nil)
@@ -74,9 +77,7 @@ class ViewController: UIViewController {
         /* Play Sound. Code from reference in assignment: www.hackingwithswift.com/example-code/media/how-to-play-sounds-using-avaudioplayer
         */
         let soundPath = thisAnimal.soundPath
-        print(soundPath)
-        //print(Bundle.main.path(forResource: "Chipmunk", ofType: nil, inDirectory: "Sounds"))
-        let path = Bundle.main.path(forResource: "Chipmunk.wav", ofType:nil)!
+        let path = Bundle.main.path(forResource: soundPath, ofType:nil)!
         let url = URL(fileURLWithPath: path)
         do {
             animalSoundEffect = try AVAudioPlayer(contentsOf: url)
@@ -84,7 +85,6 @@ class ViewController: UIViewController {
         } catch {
             print("couldn't load file")
         }
-
     }
 }
 
@@ -115,6 +115,17 @@ class Animal: CustomStringConvertible {
 
 extension ViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // print("(\(scrollView.contentOffset.x)")
+        /* I can tell when the user has scrolled through contentOffset, but I
+         can't figure out how to access the UILabel to reset it.
+         */
+    }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        // print("Next animal reached")
+        // print(scrollView.subviews)
         
+    }
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        // print("scrollViewWillBeginDragging")
     }
 }
