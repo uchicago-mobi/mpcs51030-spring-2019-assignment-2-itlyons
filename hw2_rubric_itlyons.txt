@@ -51,7 +51,8 @@ It looks like you implemented some UIScrollViewDelegate methods, but aren't actu
 anything inside them. The only one you need here is scrollViewDidScroll. The other two can
 be deleted. You make a note that you don't know how to access the UILabel to reset the
 animal species. Your IBOutlet "animalLabel" is a class-level property, which means you can
-access that variable anywhere inside ViewController. There's some math involved in figuring out what "page" you're on, but once you do that, you can just set:
+access that variable anywhere inside ViewController. There's some math involved in figuring 
+out what "page" you're on, but once you do that, you can just set:
 
 animalLabel.text = animals[pageNumber].species
 
